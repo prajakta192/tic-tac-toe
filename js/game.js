@@ -1,5 +1,5 @@
 export default class Game {
   constructor() {
-    console.log('class ini');
+    console.log('class in');
   }
 }
