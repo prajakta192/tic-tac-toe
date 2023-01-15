@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: 'Merriwheather Sans', sans-serif;
+  color: #4c6986;
+}
+.wrapper {
+  /*width: 1440px;*/
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 70px;
+}
+.restart {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  border: 2px solid #4c6986;
+  margin-top: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+.restart:hover {
+  background-color: #4c6986;
+  color: #fff;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+}
+.header {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+}
+.header .player-x,
+.player-o {
+  flex: 1;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 10px;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0;
+  flex-grow: 1;
+  padding: 10px;
+}
+.board-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  cursor: pointer;
+}
+
+/*select ele that are not (3,6,9)*/
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid rgba(137, 163, 189, 0.5);
+}
+/*nth-last-child(-n + 3)selects last 3ele i.e. 9,8,6(1,2,3,4,5,6,7,8,9) 
+so to select ele 1,2,3,4,5,6 & not(7,8,9) use :not(:nth-last-child(-n + 3))*/
+.board-tile:not(:nth-last-child(-n + 3)) {
+  border-bottom: 3px solid rgba(137, 163, 189, 0.5);
+}
+.board-tile:hover {
+  background-color: #eee;
+}
